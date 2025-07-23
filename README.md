@@ -1,0 +1,2 @@
+# gollama
+Ollama Golang library
