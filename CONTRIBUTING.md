@@ -59,12 +59,17 @@ Here's the general process for submitting a pull request:
     * Add or update tests for new functionality or bug fixes to maintain comprehensive test coverage.
 5.  **Run tests and linters:**
     ```bash
+    # Run all unit tests
     go test ./...
+    # Run integration tests (requires a live Ollama server)
+    go test -v --tags=integration ./...
+
     go fmt ./...
     golangci-lint run # If golangci-lint is installed.
     ```
     Ensure all tests pass and your code is formatted correctly.
 6.  **Commit your changes:** Write clear, concise, and descriptive commit messages. A good commit message explains *what* changed and *why*.
+    We recommend following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification for your commit messages (e.g., `feat: ...`, `fix: ...`, `docs: ...`).
     ```bash
     git add .
     git commit -m "feat: Briefly describe your feature or fix"
@@ -91,7 +96,10 @@ To get your development environment ready:
     * Access to an Ollama server (local or remote)
 * **Running tests:**
     ```bash
+    # Run all unit tests
     go test ./...
+    # Run integration tests (requires a live Ollama server)
+    go test -v --tags=integration ./...
     ```
 * **Running examples:**
     ```bash
